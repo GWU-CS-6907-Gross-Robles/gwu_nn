@@ -109,3 +109,45 @@ class Dense(Layer):
         if self.add_bias:
             self.bias -= learning_rate * output_error
         return input_error
+
+
+class LSTM(Layer):
+
+    def __init__(self, output_size, activation=None):
+        super().__init__(activation)
+        self.type = None
+        self.name = "LSTM"
+        self.output_size = output_size
+
+
+    def init_weights(self, input_size):
+        """Initialize the weights for the layer based on input and output size
+
+        Args:
+            input_size (np.array): dimensions for the input array
+        """
+
+
+
+    @apply_activation_forward
+    def forward_propagation(self, input):
+        """Applies the forward propagation for a lstm layer. This will compute the forget gate, input gate, cell state,
+        and output gate.
+
+        Args:
+            input (np.array): Input tensor calculated during forward propagation up to this layer.
+
+        Returns:
+            np.array(float): The dot product of the input and the layer's weight tensor."""
+
+
+    @apply_activation_backward
+    def backward_propagation(self, output_error, learning_rate):
+        """Applies the backward propagation for a lstm  layer. This will propagate gradients back to the first lstm
+        cell.
+
+        Args:
+            output_error (np.array): The gradient of the error up to this point in the network.
+
+        Returns:
+            np.array(float): The gradient of the error up to and including this layer."""
