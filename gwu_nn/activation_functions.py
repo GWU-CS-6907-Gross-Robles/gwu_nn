@@ -121,3 +121,33 @@ class SoftmaxActivation(ActivationFunction):
         """
         s = x.reshape(-1, 1)
         return np.diagflat(s) - np.dot(s, s.T)
+
+
+class TanhActivation(ActivationFunction):
+
+    @classmethod
+    @vectorize_activation
+    def activation(cls, x):
+        """Scales inputs to (-1,1)
+
+        Args:
+            x (np.array): input into the layer/activation function
+
+        Returns:
+            np.array(floats): Tanh(x)
+        """
+        return np.tanh(x)
+
+    @classmethod
+    @vectorize_activation
+    def activation_partial_derivative(cls, x):
+        """Applies the partial derivative of the Tanh function to the input
+
+        Args:
+            x (np.array): partial derivative up to this layer/activation function
+
+        Returns:
+            np.array(floats): derivative of network up to this activation/layer
+        """
+        return 1-(x**2)
+

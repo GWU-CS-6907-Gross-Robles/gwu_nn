@@ -1,4 +1,4 @@
-from gwu_nn.activation_functions import SigmoidActivation, RELUActivation, SoftmaxActivation
+from gwu_nn.activation_functions import SigmoidActivation, RELUActivation, SoftmaxActivation, TanhActivation
 
 
 class ActivationLayer:
@@ -52,3 +52,10 @@ class Softmax(ActivationLayer):
     def __init__(self):
         super().__init__(SoftmaxActivation)
         self.name = "Softmax"
+
+class Tanh(ActivationLayer):
+    """Layer that applies the Tanh activation function"""
+    def __init__(self):
+        super().__init__(TanhActivation)
+        self.name = "Tanh"
+

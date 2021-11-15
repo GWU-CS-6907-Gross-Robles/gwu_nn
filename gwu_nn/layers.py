@@ -1,8 +1,8 @@
 import numpy as np
 from abc import ABC, abstractmethod
-from gwu_nn.activation_layers import Sigmoid, RELU, Softmax
+from gwu_nn.activation_layers import Sigmoid, RELU, Softmax, Tanh
 
-activation_functions = {'relu': RELU, 'sigmoid': Sigmoid, 'softmax': Softmax}
+activation_functions = {'relu': RELU, 'sigmoid': Sigmoid, 'softmax': Softmax, 'tanh': Tanh}
 
 
 def apply_activation_forward(forward_pass):
