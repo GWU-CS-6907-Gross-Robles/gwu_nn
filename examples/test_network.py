@@ -54,3 +54,4 @@ bias = network.layers[0].bias[0][0]
 start_y = (bias + start_x1 * weights[0] - logit(0.5)) / - weights[1]
 end_y = (bias + end_x1 * weights[0] - logit(0.5)) / -weights[1]
 plt.plot([start_x1, end_x1], [start_y, end_y], color='grey')
+plt.show()
